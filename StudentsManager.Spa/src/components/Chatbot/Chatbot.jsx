@@ -25,13 +25,13 @@ function Chatbot() {
         <div className="soge-young-chatbot chatbot-container">
 
             {examinationContext && (
-                <output className="chatbot-context-banner">
+                <div className="chatbot-context-banner" aria-live="polite">
                     <span className="chatbot-context-icon" aria-hidden="true">📋</span>
                     <span>
                         Заредени са твоите предишни отговори от изпита —
                         AI асистентът може да ги използва като контекст.
                     </span>
-                </output>
+                </div>
             )}
 
             {!isLoggedIn && (
@@ -74,9 +74,9 @@ function Chatbot() {
                 )}
 
                 {sessionSaved && !isLoading && (
-                    <output className="chatbot-saved" aria-live="polite">
+                    <div className="chatbot-saved" aria-live="polite">
                         ✓ Разговорът е записан
-                    </output>
+                    </div>
                 )}
 
                 <div ref={messagesEndRef} />
